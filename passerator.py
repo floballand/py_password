@@ -27,6 +27,7 @@ def main():
     Args : s.o
     Returns : s.o
     """
+    langue=lang()
     options=menuOptions()
     table=tablecaractere(options)
     generator(table,int(options.split(' ')[6])) #this items [6] is a password size
