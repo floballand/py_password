@@ -4,10 +4,19 @@
 # --------
 # Name : PASSERATOR.py
 # Objectif : Password Generator
+# --------
 # version : 0.1
 # Author : INOPE
 # 18/12/2016
 # fballand.inope@gmail.com
+# --------
+# version : 0.2
+# Author : INOPE
+# 26/12/2016
+# fballand.inope@gmail.com
+# - use XML to translate
+# - add detect langue
+# - minima python 3.2
 # --------
 
 # --------
@@ -16,6 +25,8 @@
 import string
 import sys,io,random
 import locale
+import xml.etree.ElementTree as xmlET
+
 """
 Password Generate
 """
@@ -42,9 +53,29 @@ def lang():
     lang=locale.getdefaultlocale()
     if (lang[0:1]=="fr"):
         lang="fr"
+    elif (lang[0:1]=="es"):
+        lang="es"
     else:
         lang="en"
-    return lang
+    #print (lang)
+
+    """
+    read file translate XML
+    """
+    translateTable={}
+    rank=0
+    treeXML=xmlET.parse('langue.xml')
+    rootXML=treeXML.getroot()
+    for childRank in rootXML.iter('rank'):
+        rank=childRank.get('rank-id')
+        for child in childRank.iter('langue'):
+            if(child.get('select-lang')==lang):
+                translateTable[rank]=child.find('label').text
+                
+    #for key,value in translateTable.items():
+    #   print(key,value)
+        
+    return translateTable
 
 # --------
 # menu
@@ -62,7 +93,7 @@ def menuOptions():
     print ('Options par defaut (9 caracteres, ex : O%kYlJ<5S ) ')
     value=input('Votre choix (O/N): ')
     if (value in listeChoixYes):
-        valueReturn=['o','o','o','o','o','o','9']
+        valueReturn=['o','o','o','o','o','o','9'] #All at YES/OUI ;default value to this mode
     elif(value in listeChoixNo):
         valueReturn=[]
         '[0]-----------------------------------'
