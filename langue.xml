@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<langues>
+<rank rank-id="1">
+    <langue select-lang="en">
+        <label>Choisir les options de generation : </label>
+    </langue>
+    <langue select-lang="es">
+        <label>gfhfghgh </label>
+    </langue>
+</rank>
+<rank rank-id="2">
+        <langue select-lang="en">
+        <label><![CDATA[Options par defaut (9 caracteres, ex : O%kYlJ<5S ) ]]></label>
+    </langue>
+</rank>
+<rank rank-id="3">
+    <langue select-lang="en">
+        <label>Votre choix (O/N): </label>
+    </langue>
+</rank>
+<rank rank-id="4">
+    <langue select-lang="en">
+        <label>Utilisation de numbers (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="5">
+    <langue select-lang="en">
+        <label>Utilisation de majuscules (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="6">
+    <langue select-lang="en">
+        <label>Utilisation de minuscule (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="7">
+    <langue select-lang="en">
+        <label>Utilisation d\'accent (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="8">
+    <langue select-lang="en">
+        <label>Utilisation de caracteres speciaux (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="9">
+    <langue select-lang="en">
+        <label>Utilisation de caracteres similaires (I-l-1,0-O) (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="10">
+    <langue select-lang="en">
+        <label>Indiquer le taille du mot de passe : </label>
+    </langue>
+</rank>
+<rank rank-id="11">
+    <langue select-lang="en">
+        <label>Votre choix: </label>
+    </langue>
+</rank>
+<rank rank-id="12">
+    <langue select-lang="en">
+        <label>No selected Y/O/N. Close program. Please reload program. </label>
+    </langue>
+</rank>
+<rank rank-id="13">
+    <langue select-lang="en">
+        <label>Press ENTER to quit ! </label>
+    </langue>
+</rank>
+</langues>
