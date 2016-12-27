@@ -20,7 +20,7 @@
 </rank>
 <rank rank-id="4">
     <langue select-lang="en">
-        <label>Utilisation de numbers (O/N ) ? Saisir son choix : </label>
+        <label>Utilisation de nombres (O/N ) ? Saisir son choix : </label>
     </langue>
 </rank>
 <rank rank-id="5">
@@ -35,7 +35,7 @@
 </rank>
 <rank rank-id="7">
     <langue select-lang="en">
-        <label>Utilisation d\'accent (O/N ) ? Saisir son choix : </label>
+        <label>Utilisation d'accent (O/N ) ? Saisir son choix : </label>
     </langue>
 </rank>
 <rank rank-id="8">
@@ -66,6 +66,11 @@
 <rank rank-id="13">
     <langue select-lang="en">
         <label>Press ENTER to quit ! </label>
+    </langue>
+</rank>
+<rank rank-id="14">
+    <langue select-lang="en">
+        <label>Utilisation forcée des minuscules </label>
     </langue>
 </rank>
 </langues>
