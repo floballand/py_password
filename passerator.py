@@ -121,19 +121,11 @@ def menuOptions(langueDico):
             valueReturn.append('n')
             
         '[2]---Use lowercase---------------------- '
-        """
-        upper&lower is impossible. if uppercase is disabled,
-        then lowercase foce the enable.
-        """
-        if(valueReturn[1]=="o"): 
-            value=input (langueDico.get('6'))
-            if (value in listeChoixYes):
-                valueReturn.append(value)
-            else:
-                valueReturn.append('n')
+        value=input (langueDico.get('6'))
+        if (value in listeChoixYes):
+            valueReturn.append(value)
         else:
-            print(langueDico.get('14')) #force using lowercase
-            valueReturn.append('o')
+            valueReturn.append('n')
             
         '[3]---Use accent------------------ '
         value=input (langueDico.get('7'))
@@ -155,7 +147,13 @@ def menuOptions(langueDico):
             valueReturn.append(value)
         else:
             valueReturn.append('n')
+
+        'security: if nothing (char/numbers...) is selected, force to use the defaults values'
+        if(valueReturn==['n','n','n','n','n','n']):
+            print(langueDico.get('14'))
+            valueReturn==['o','o','o','o','o','o']
             
+        
         '[6]----Size password--------------------    '
         value=input(langueDico.get('10'))
         if(value==""):
