@@ -151,7 +151,7 @@ def menuOptions(langueDico):
         'security: if nothing (char/numbers...) is selected, force to use the defaults values'
         if(valueReturn==['n','n','n','n','n','n']):
             print(langueDico.get('14'))
-            valueReturn==['o','o','o','o','o','o']
+            valueReturn=['o','o','o','o','o','o']
             
         
         '[6]----Size password--------------------    '
