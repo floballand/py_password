@@ -112,4 +112,12 @@
         <label>AVERTISSEMENT : Aucun élément sélectionné, utilisation forçée des valeurs par défaut! </label>
     </langue>
 </rank>
+<rank rank-id="15">
+    <langue select-lang="en">
+        <label>WARGING : Write a number ! </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>AVERTISSEMENT : Saisir un numéro ! </label>
+    </langue>
+</rank>
 </langues>

@@ -161,7 +161,7 @@ def menuOptions(langueDico):
                 value=int(input(langueDico.get('10')))
                 break
             except :
-                print("errorrrrrrrr")
+                print(langueDico.get('15'))
                 
         if (value>0):
             value=str(value)
