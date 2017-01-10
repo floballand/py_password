@@ -6,7 +6,7 @@
 # Objectif : Password Generator
 # --------
 # Author : INOPE <fballand.inope@gmail.com>
-# Licence : CGPL
+# License : GPL3
 # --------
 
 
@@ -30,13 +30,18 @@ def main():
     Args : s.o
     Returns : s.o
     """
+    print ('<============PASSERATOR============>')
     dicoLangue={}
-    dicoLangue=langParseXML()
+    dicoLangue=langParseXML()     
     options=menuOptions(dicoLangue)
     table=tablecaractere(options)
-    generator(table,int(options.split(' ')[6])) #this item [6] is a size password
-    input(dicoLangue.get('13'))
-    print ('END')
+    i=1
+    while i<=int(options.split(' ')[7]):
+        i+=1
+        generator(table,int(options.split(' ')[6])) #this item [6] is a size password
+        
+    input(dicoLangue.get('13')) #msg : Press enter to quit
+    print ('<============END============>')
     exit(0)
 
 # --------
@@ -47,15 +52,14 @@ def langParseXML():
     Args : s.o
     Returns : translateTable : langues dictionaries 
     """
-    lang=locale.getdefaultlocale()#langue of system
+    lang=locale.getdefaultlocale()#langue from system
     if (lang[0:1]=="fr"):
         lang="fr"
     elif (lang[0:1]=="es"):
         lang="es"
     else:
         lang="en"
-    #print (lang)
-
+        
     """
     read/PARSER file translate XML
     """
@@ -89,8 +93,17 @@ def menuOptions(langueDico):
     listeChoixYes=['o','oui','y','yes','si','s']
     listeChoixNo=['non','n','no']
 
-    print (langueDico.get('1'))
-    print (langueDico.get('2'))
+    #indicate a number of password at generate
+    nbrPassword=1
+    while True:
+        try: 
+            nbrPassword=int(input(langueDico.get('16')))
+            break
+        except :
+            print(langueDico.get('15'))
+            
+    print ('\n'+langueDico.get('1'))
+    print ('\n'+langueDico.get('2'))
     value=input(langueDico.get('3'))
     if (value in listeChoixYes):
         valueReturn=['y','y','y','y','y','y','9'] #All at YES/OUI ;default value to this mode
@@ -98,42 +111,42 @@ def menuOptions(langueDico):
         valueReturn=[]
         
         '[0]---Use numbers------------------------'
-        value=input (langueDico.get('4'))
+        value=input ('\n'+langueDico.get('4'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[1]---Use Uppercase-----------------------'
-        value=input (langueDico.get('5'))
+        value=input ('\n'+langueDico.get('5'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[2]---Use lowercase---------------------- '
-        value=input (langueDico.get('6'))
+        value=input ('\n'+langueDico.get('6'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[3]---Use accent------------------ '
-        value=input (langueDico.get('7'))
+        value=input ('\n'+langueDico.get('7'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[4]----Use char specific------------------ '
-        value=input (langueDico.get('8'))
+        value=input ('\n'+langueDico.get('8'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[5]---Use similar char---------------------- '
-        value=input (langueDico.get('9'))
+        value=input ('\n'+langueDico.get('9'))
         if (value in listeChoixYes):
             valueReturn.append('y')
         else:
@@ -141,7 +154,7 @@ def menuOptions(langueDico):
 
         'security: if nothing (char/numbers...) is selected, force to use the defaults values'
         if(valueReturn==['n','n','n','n','n','n']):
-            print(langueDico.get('14'))
+            print('\n'+langueDico.get('14'))
             valueReturn=['y','y','y','y','y','y']
             
         
@@ -149,7 +162,7 @@ def menuOptions(langueDico):
         value=9
         while True:
             try:
-                value=int(input(langueDico.get('10')))
+                value=int(input('\n'+langueDico.get('10')))
                 break
             except :
                 print(langueDico.get('15'))
@@ -163,6 +176,13 @@ def menuOptions(langueDico):
     else:
         print (langueDico.get('12'))
         exit(0)
+        
+    if(nbrPassword<=0):
+        nbrPassword=1
+    valueReturn.append(str(nbrPassword)) #position [7]
+
+    print('DEBUG')
+    print(valueReturn)
     return ' '.join(valueReturn)#convert a list on string(tupple)
 
 def tablecaractere(liste):
@@ -172,39 +192,37 @@ def tablecaractere(liste):
     Returns : a table of caractere authorized for the a traitment
     """
 
-    if(liste[0]=='y'):
-       number=string.digits
+    if(liste.split(' ')[0]=='y'):
+        number=string.digits
     else:
-       number=''
-
-    if(liste[1]=='y'):
-       letterMinus=string.ascii_lowercase
+        number=''
+        
+    if(liste.split(' ')[1]=='y'):
+        letterMinus=string.ascii_lowercase
     else:
-       letterMinus=''
+        letterMinus=''
 
-    if(liste[2]=='y'):
-       letterMaxi=string.ascii_uppercase
+    if(liste.split(' ')[2]=='y'):
+        letterMaxi=string.ascii_uppercase
     else:
-       letterMaxi=''
+        letterMaxi=''
 
-    if(liste[3]=='y'):
-       letterAccent='àâäåçéèêëîïôöùûü'
+    if(liste.split(' ')[3]=='y'):
+        letterAccent='àâäåçéèêëîïôöùûü'
     else:
-       letterAccent=''
+        letterAccent=''
 
-    if(liste[4]=='y'):
-       caractSpe='!@#$%^&*(){}[],.;<>?|'
+    if(liste.split(' ')[4]=='y'):
+        caractSpe='!@#$%^&*(){}[],.;<>?|'
     else:
-       caractSpe=''
+        caractSpe=''
 
-    if(liste[5]=='n'):
+    table=number+letterMinus+letterMaxi+caractSpe
+    if(liste.split(' ')[5]=='n'):
         caractASup=['O0l1I'] #list of similar characters graphics
-        table=number+letterMinus+letterMaxi+caractSpe
         for i in range(0,len(caractASup)):
-                       table=table.replace(caractASup[i],'')
-        return table
-    else:
-       return number+letterMinus+letterMaxi+caractSpe
+            table=table.replace(caractASup[i],'')
+    return table
 
 
 def generator(charAutori,size):
@@ -214,7 +232,7 @@ def generator(charAutori,size):
     Returns : s.o
     """
     choice = random.SystemRandom().choice
-    print('Password :')
+    print('\n'+'* Password :')
     print (''.join(random.choice(charAutori) for i in range(size)))
 
 if __name__ == '__main__':

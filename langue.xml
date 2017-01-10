@@ -117,7 +117,15 @@
         <label>WARGING : Write a number ! </label>
     </langue>
     <langue select-lang="fr">
-        <label>AVERTISSEMENT : Saisir un numéro ! </label>
+        <label>AVERTISSEMENT : Saisir un nombre ! </label>
+    </langue>
+</rank>
+<rank rank-id="16">
+    <langue select-lang="en">
+        <label>Write a number of password at generate : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Indiquez le nombre de password à génèrer : </label>
     </langue>
 </rank>
 </langues>
