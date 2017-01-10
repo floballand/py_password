@@ -95,73 +95,80 @@ def menuOptions(langueDico):
     Args : s.o
     Returns : One list of user options  [ononon9]. the last option is a password size
     """
-    listeChoixYes=['o','oui','y','yes']
+    listeChoixYes=['o','oui','y','yes','si','s']
     listeChoixNo=['non','n','no']
 
     print (langueDico.get('1'))
     print (langueDico.get('2'))
     value=input(langueDico.get('3'))
     if (value in listeChoixYes):
-        valueReturn=['o','o','o','o','o','o','9'] #All at YES/OUI ;default value to this mode
+        valueReturn=['y','y','y','y','y','y','9'] #All at YES/OUI ;default value to this mode
     elif(value in listeChoixNo):
         valueReturn=[]
         
         '[0]---Use numbers------------------------'
         value=input (langueDico.get('4'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[1]---Use Uppercase-----------------------'
         value=input (langueDico.get('5'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[2]---Use lowercase---------------------- '
         value=input (langueDico.get('6'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[3]---Use accent------------------ '
         value=input (langueDico.get('7'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[4]----Use char specific------------------ '
         value=input (langueDico.get('8'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
             
         '[5]---Use similar char---------------------- '
         value=input (langueDico.get('9'))
         if (value in listeChoixYes):
-            valueReturn.append(value)
+            valueReturn.append('y')
         else:
             valueReturn.append('n')
 
         'security: if nothing (char/numbers...) is selected, force to use the defaults values'
         if(valueReturn==['n','n','n','n','n','n']):
             print(langueDico.get('14'))
-            valueReturn=['o','o','o','o','o','o']
+            valueReturn=['y','y','y','y','y','y']
             
         
         '[6]----Size password--------------------    '
-        value=input(langueDico.get('10'))
-        if(value==""):
-           value='9'#default size 9 char            
-        if (int(value)>0):
+        value=9
+        while True:
+            try:
+                value=int(input(langueDico.get('10')))
+                break
+            except :
+                print("errorrrrrrrr")
+                
+        if (value>0):
+            value=str(value)
             valueReturn.append(value)#custom size
         else:
-            valueReturn.append('9')#default size 9 char    
+            valueReturn.append('9')#default size 9 char
+           
     else:
         print (langueDico.get('12'))
         exit(0)
@@ -174,27 +181,27 @@ def tablecaractere(liste):
     Returns : a table of caractere authorized for the a traitment
     """
 
-    if(liste[0]=='o'):
+    if(liste[0]=='y'):
        number=string.digits
     else:
        number=''
 
-    if(liste[1]=='o'):
+    if(liste[1]=='y'):
        letterMinus=string.ascii_lowercase
     else:
        letterMinus=''
 
-    if(liste[2]=='o'):
+    if(liste[2]=='y'):
        letterMaxi=string.ascii_uppercase
     else:
        letterMaxi=''
 
-    if(liste[3]=='o'):
+    if(liste[3]=='y'):
        letterAccent='àâäåçéèêëîïôöùûü'
     else:
        letterAccent=''
 
-    if(liste[4]=='o'):
+    if(liste[4]=='y'):
        caractSpe='!@#$%^&*(){}[],.;<>?|'
     else:
        caractSpe=''
