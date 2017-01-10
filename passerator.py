@@ -5,19 +5,10 @@
 # Name : PASSERATOR.py
 # Objectif : Password Generator
 # --------
-# version : 0.1
-# Author : INOPE
-# 18/12/2016
-# fballand.inope@gmail.com
+# Author : INOPE <fballand.inope@gmail.com>
+# Licence : CGPL
 # --------
-# version : 0.2
-# Author : INOPE
-# 26/12/2016
-# fballand.inope@gmail.com
-# - use XML to translate
-# - add detect langue
-# - minima python 3.2
-# --------
+
 
 # --------
 # Imports
