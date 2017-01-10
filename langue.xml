@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<langues>
+<rank rank-id="1">
+    <langue select-lang="en">
+        <label>Select the generation options  : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Choisir les options de generation : </label>
+    </langue>
+</rank>
+<rank rank-id="2">
+    <langue select-lang="en">
+        <label><![CDATA[Defaults options (9 caracteres, ex : O%kYlJ<5S ) ]]></label>
+    </langue>
+    <langue select-lang="fr">
+        <label><![CDATA[Options par defaut (9 caracteres, ex : O%kYlJ<5S ) ]]></label>
+    </langue>
+</rank>
+<rank rank-id="3">
+    <langue select-lang="en">
+        <label>Your choice (Y/N): </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Votre choix (O/N): </label>
+    </langue>
+</rank>
+<rank rank-id="4">
+    <langue select-lang="en">
+        <label>Using a number (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation de nombres (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="5">
+    <langue select-lang="en">
+        <label>Using uppercase (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation des majuscules (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="6">
+    <langue select-lang="en">
+        <label>Using lowercase (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation des minuscules (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="7">
+    <langue select-lang="en">
+        <label>Using accents (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation des accents (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="8">
+    <langue select-lang="en">
+        <label>Using specific caracteres (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation de caracteres speciaux (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="9">
+    <langue select-lang="en">
+        <label>Using a similar caracteres (I-l-1,0-O) (Y/N ) ? Write your choice : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Utilisation de caracteres similaires (I-l-1,0-O) (O/N ) ? Saisir son choix : </label>
+    </langue>
+</rank>
+<rank rank-id="10">
+    <langue select-lang="en">
+        <label>Write a password size : </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Indiquer le taille du mot de passe : </label>
+    </langue>
+</rank>
+<rank rank-id="11">
+    <langue select-lang="en">
+        <label>Your choice: </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Votre choix: </label>
+    </langue>
+</rank>
+<rank rank-id="12">
+    <langue select-lang="en">
+        <label>No selected Y/N. Close program. Please reload program. </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Aucune selection O/N. Arrêt du programme. Redemmarrer le programme. </label>
+    </langue>
+</rank>
+<rank rank-id="13">
+    <langue select-lang="en">
+        <label>Press ENTER to quit ! </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>Appuyer sur ENTRER pour quitter ! </label>
+    </langue>
+</rank>
+<rank rank-id="14">
+    <langue select-lang="en">
+        <label>WARGING : Nothing selection, using the defaults values ! </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>AVERTISSEMENT : Aucun élément sélectionné, utilisation forçée des valeurs par défaut! </label>
+    </langue>
+</rank>
+<rank rank-id="15">
+    <langue select-lang="en">
+        <label>WARGING : Write a number ! </label>
+    </langue>
+    <langue select-lang="fr">
+        <label>AVERTISSEMENT : Saisir un numéro ! </label>
+    </langue>
+</rank>
+</langues>
