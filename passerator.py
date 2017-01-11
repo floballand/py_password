@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-# --------
-# Name : PASSERATOR.py
-# Objectif : Password Generator
-# --------
-# Author : INOPE <fballand.inope@gmail.com>
-# License : GPL3
-# --------
+""" --------
+ @name : PASSERATOR.py
+ @brief : Password Generator
+ --------
+ @author : INOPE <fballand.inope@gmail.com>
+ @license : GPL3
+""" --------
 
 
 # --------
@@ -26,9 +26,13 @@ Password Generate
 # definition
 # --------
 def main():
-    """
-    Args : s.o
-    Returns : s.o
+    """ Main function
+    @brief : read a file XML lang
+    @brief : display menu
+    @brief : load a table of letters
+    @brief : generate
+    @param : s.o
+    @returns : s.o
     """
     print ('<============PASSERATOR============>')
     dicoLangue={}
@@ -49,8 +53,10 @@ def main():
 # --------
 def langParseXML():
     """
-    Args : s.o
-    Returns : translateTable : langues dictionaries 
+    @brief : read a XML file to load a translate message
+    @brief : A without XML make a exit
+    @param : s.o
+    @return : translateTable : langues dictionaries 
     """
     lang=locale.getdefaultlocale()#langue from system
     if (lang[0:1]=="fr"):
@@ -86,14 +92,14 @@ def langParseXML():
 # --------
 def menuOptions(langueDico):
     """
-    Display a menu on the terminal. The user can select a generate mode password
-    Args : s.o
-    Returns : One list of user options  [ononon9]. the last option is a password size
+    @brief : Display a menu on the terminal. The user can select a generate mode password
+    @param : langueDico : dictionary extract from XML lang
+    @return : valueReturn :One list of user options  [y','y','y','y','y','y','9', '5']. options, a password size and number of password
     """
     listeChoixYes=['o','oui','y','yes','si','s']
     listeChoixNo=['non','n','no']
 
-    #indicate a number of password at generate
+    '----indicate a number of password at generate----'
     nbrPassword=1
     while True:
         try: 
@@ -155,8 +161,7 @@ def menuOptions(langueDico):
         'security: if nothing (char/numbers...) is selected, force to use the defaults values'
         if(valueReturn==['n','n','n','n','n','n']):
             print('\n'+langueDico.get('14'))
-            valueReturn=['y','y','y','y','y','y']
-            
+            valueReturn=['y','y','y','y','y','y']          
         
         '[6]----Size password--------------------    '
         value=9
@@ -187,9 +192,9 @@ def menuOptions(langueDico):
 
 def tablecaractere(liste):
     """
-    One table of caractere is create with a user choice in a menu
-    Args : options liste
-    Returns : a table of caractere authorized for the a traitment
+    @brief: One table of caractere is create with a user choice in a menu
+    @param : liste : user options
+    @return : table : a table of caractere authorized for the a traitment
     """
 
     if(liste.split(' ')[0]=='y'):
@@ -227,9 +232,9 @@ def tablecaractere(liste):
 
 def generator(charAutori,size):
     """
-    generate password
-    Args : table of caractere, password size
-    Returns : s.o
+    @brief : generate password
+    @params : charAutori :table of caractere; size: password size
+    @return : s.o
     """
     choice = random.SystemRandom().choice
     print('\n'+'* Password :')
