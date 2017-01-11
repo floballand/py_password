@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-""" --------
+"""
  @name : PASSERATOR.py
  @brief : Password Generator
  --------
  @author : INOPE <fballand.inope@gmail.com>
  @license : GPL3
-""" --------
+"""
 
 
 # --------
