@@ -1,0 +1,13 @@
+passerator (1.0.0) stable;urgency=low
+
+passerator (0.2.0) stable;urgency=low
+ * Using char to password size. close: #1
+ * translate file : langue.xml. close: #2
+ * error when use a custom mode without char. close: #4
+ * mode custom: generate without case. close: #3
+-- INOPE <fballand.inope@gmail.com> 26/12/2016
+
+
+passerator (0.1.0) stable;urgency=low
+ * Initial Release
+-- INOPE <fballand.inope@gmail.com> 18/12/2016
