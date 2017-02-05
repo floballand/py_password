@@ -45,8 +45,9 @@ def main():
     i=1
     while i<=int(options.split(' ')[7]):
         i+=1
-        generator(table,int(options.split(' ')[6])) #this item [6] is a size password
-        
+        value=generator(table,int(options.split(' ')[6])) #this item [6] is a size password
+        print('\n'+'* Password :')
+        print(value)
     input(dicoLangue.get('13')) #msg : Press enter to quit
     print ('<============END============>')
     exit(0)

@@ -65,5 +65,4 @@ def generator(charAutori,size):
     @return : s.o
     """
     choice = random.SystemRandom().choice
-    print('\n'+'* Password :')
-    print (''.join(random.choice(charAutori) for i in range(size)))
+    return(''.join(random.choice(charAutori) for i in range(size)))
