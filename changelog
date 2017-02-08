@@ -1,4 +1,8 @@
 passerator (1.0.0) stable;urgency=low
+  * add a GUI with QT5
+  * add a bash to launch the 2 mods (with or not GUI)
+  * split a source file
+  * correction if any case is selected
 
 passerator (0.2.0) stable;urgency=low
  * Using char to password size. close: #1
