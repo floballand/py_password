@@ -2,16 +2,68 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>394</width>
-    <height>397</height>
+    <width>381</width>
+    <height>420</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>PasseratorG</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,  stop: 0  rgb(200, 200, 200), stop: 1 rgb(166, 166, 166));
+}
+
+ QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+ }
+ QCheckBox {
+	background-color:white;
+     spacing: 1px;
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+ }
+
+ QLabel {
+     spacing: 1px;
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+ }
+
+ QTextEdit {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgb(154, 248, 1), stop: 1 #81c200);
+     background-attachment: scroll;
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+ }
+ QSpinBox {
+	background-color:white;
+     padding-right: 15px;
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+ }
+</string>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -379,7 +431,11 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>spNumber</tabstop>
@@ -424,8 +480,8 @@
      <y>295</y>
     </hint>
     <hint type="destinationlabel">
-     <x>135</x>
-     <y>317</y>
+     <x>129</x>
+     <y>326</y>
     </hint>
    </hints>
   </connection>
