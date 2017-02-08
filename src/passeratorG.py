@@ -14,12 +14,13 @@
 # Imports
 # --------
 import string
-import sys,io,random
+import sys,io,random,os
 import locale
 from parserXML import langParseXML
 from generation import tablecaractere,generator
 from PyQt5 import QtWidgets, uic,QtCore
 from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtGui import QPixmap
  
 
 """
@@ -45,6 +46,7 @@ def connector():
     @return : s.o
     """
     widget.btGenerate.clicked.connect(actionButtonGenerate)
+    
     
 def optionsPassword():
     """
@@ -123,6 +125,7 @@ def main():
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     widget = uic.loadUi("gui/passeratorgui.ui")
+    widget.lbLogo.setPixmap(QPixmap("gui/img/inopek.png"))
     main()
     widget.show()
     app.exec_()
