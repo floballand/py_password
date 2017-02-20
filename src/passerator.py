@@ -16,8 +16,11 @@
 import string
 import sys,io,random
 import locale
+from parserXML import langParseXML
+from generation import tablecaractere,generator
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import ParseError
+
 
 """
 Password Generate
@@ -42,50 +45,13 @@ def main():
     i=1
     while i<=int(options.split(' ')[7]):
         i+=1
-        generator(table,int(options.split(' ')[6])) #this item [6] is a size password
-        
+        value=generator(table,int(options.split(' ')[6])) #this item [6] is a size password
+        print('\n'+'* Password :')
+        print(value)
     input(dicoLangue.get('13')) #msg : Press enter to quit
     print ('<============END============>')
     exit(0)
 
-# --------
-# langue detection
-# --------
-def langParseXML():
-    """
-    @brief : read a XML file to load a translate message
-    @brief : A without XML make a exit
-    @param : s.o
-    @return : translateTable : langues dictionaries 
-    """
-    lang=locale.getdefaultlocale()#langue from system
-    if (lang[0:1]=="fr"):
-        lang="fr"
-    elif (lang[0:1]=="es"):
-        lang="es"
-    else:
-        lang="en"
-        
-    """
-    read/PARSER file translate XML
-    """
-    translateTable={}
-    rank=0
-    xmlET=ElementTree()
-    try:
-        treeXML=xmlET.parse('langue.xml')
-        for childRank in treeXML.iter('rank'):
-            rank=childRank.get('rank-id')
-            for child in childRank.iter('langue'):
-                if(child.get('select-lang')==lang):
-                    translateTable[rank]=child.find('label').text                
-        #for key,value in translateTable.items():
-        #   print(key,value)
-    except Exception as msgError:
-        print(msgError)
-        exit()
-    
-    return translateTable
 
 # --------
 # menu
@@ -186,59 +152,8 @@ def menuOptions(langueDico):
         nbrPassword=1
     valueReturn.append(str(nbrPassword)) #position [7]
 
-    print('DEBUG')
-    print(valueReturn)
     return ' '.join(valueReturn)#convert a list on string(tupple)
 
-def tablecaractere(liste):
-    """
-    @brief: One table of caractere is create with a user choice in a menu
-    @param : liste : user options
-    @return : table : a table of caractere authorized for the a traitment
-    """
-
-    if(liste.split(' ')[0]=='y'):
-        number=string.digits
-    else:
-        number=''
-        
-    if(liste.split(' ')[1]=='y'):
-        letterMinus=string.ascii_lowercase
-    else:
-        letterMinus=''
-
-    if(liste.split(' ')[2]=='y'):
-        letterMaxi=string.ascii_uppercase
-    else:
-        letterMaxi=''
-
-    if(liste.split(' ')[3]=='y'):
-        letterAccent='àâäåçéèêëîïôöùûü'
-    else:
-        letterAccent=''
-
-    if(liste.split(' ')[4]=='y'):
-        caractSpe='!@#$%^&*(){}[],.;<>?|'
-    else:
-        caractSpe=''
-
-    table=number+letterMinus+letterMaxi+caractSpe
-    if(liste.split(' ')[5]=='n'):
-        caractASup=['O0l1I'] #list of similar characters graphics
-        for i in range(0,len(caractASup)):
-            table=table.replace(caractASup[i],'')
-    return table
-
-
-def generator(charAutori,size):
-    """
-    @brief : generate password
-    @params : charAutori :table of caractere; size: password size
-    @return : s.o
-    """
-    choice = random.SystemRandom().choice
-    print('\n'+'* Password :')
-    print (''.join(random.choice(charAutori) for i in range(size)))
 
 if __name__ == '__main__':
     main()
