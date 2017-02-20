@@ -1,2 +1,3 @@
 #!/bin/bash
-python3 src/passerator.py
+cd src
+python3 passerator.py
